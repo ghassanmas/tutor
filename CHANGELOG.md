@@ -4,6 +4,8 @@ Note: Breaking changes between versions are indicated by "💥".
 
 ## Unreleased
 
+- [Improvement] Make sure that the logo included in email notifications (including discussion responses) is the same as the site logo.
+
 ## v12.0.4 (2021-08-12)
 
 - [Security] Apply security patch [28442](https://github.com/edx/edx-platform/pull/28442).
