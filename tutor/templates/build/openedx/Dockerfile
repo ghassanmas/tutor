@@ -41,7 +41,6 @@ WORKDIR /openedx/edx-platform
 {% else %}
 # Patch edx-platform
 # RUN curl --silent https://github.com/overhangio/edx-platform/commit/<sha1>.patch | git apply -
-RUN curl --silent https://github.com/overhangio/edx-platform/commit/8ecc1903ca9170a719c0e63e99fb231822eb26d8.patch | git apply -
 {% endif %}
 
 ###### Download extra locales to /openedx/locale/contrib/locale
@@ -68,7 +67,7 @@ COPY --from=code /openedx/edx-platform /openedx/edx-platform
 WORKDIR /openedx/edx-platform
 
 # Install the right version of pip/setuptools
-RUN pip install setuptools==44.1.0 pip==20.0.2 wheel==0.34.2
+RUN pip install setuptools==44.1.0 pip==20.3.4 wheel==0.37.0
 
 # Install base requirements
 RUN pip install -r ./requirements/edx/base.txt
@@ -77,7 +76,7 @@ RUN pip install -r ./requirements/edx/base.txt
 RUN pip install "openedx-scorm-xblock<13.0.0,>=12.0.0"
 
 # Install django-redis for using redis as a django cache
-RUN pip install django-redis==4.12.1
+RUN pip install django-redis==5.0.0
 
 # Install uwsgi
 RUN pip install uwsgi==2.0.19.1
