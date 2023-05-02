@@ -9,6 +9,8 @@ from tutor.types import Config, get_typed
 
 
 class LocalTaskRunner(compose.ComposeTaskRunner):
+    NAME = "local"
+
     def __init__(self, root: str, config: Config):
         """
         Load docker-compose files from local/.
